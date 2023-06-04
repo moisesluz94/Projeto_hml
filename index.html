@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Currículo</title>
+  <title>Projeto</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/script.js"></script>
+
+
 </head>
 <body>
 
   <nav id="menu-h">
     <ul>
-      <li onclick="toggleDiv('content1', this)"><a href="#">Monitoramento</a></li>
+      <li onclick="toggleDiv('content1', this)"><a href="#">Observabilidade</a></li>
       <li onclick="toggleDiv('content2', this)"><a href="#">Segurança</a></li>
       <li onclick="toggleDiv('content3', this)"><a href="#">Infraestrutura</a></li>
       <li onclick="toggleDiv('content4', this)"><a href="#">Automação</a></li>
@@ -28,29 +30,58 @@
       <img src="img/Grafana_Icon.png" alt="Grafana" style="width: 100px; height: auto;">
     </div>
     <br>
-    <iframe src="http://172.25.152.248:3000/d-solo/c02fe44c-bf2e-4806-997f-7303cb6e42b2/prometheus-site?orgId=1&from=1685767019941&to=1685853419942&refresh=30s&panelId=3" width="450" height="200" frameborder="0"></iframe>
+    <iframe src="http://172.25.152.248:3000/d-solo/c02fe44c-bf2e-4806-997f-7303cb6e42b2/prometheus-site?orgId=1&from=1685767019941&to=1685853419942&refresh=30s&panelId=3" width="500" height="300" frameborder="5"></iframe>
   </div>
   
   <div id="content2" class="hidden">
-    <h2>Conteúdo do Item 2</h2>
-    <p>Este é o conteúdo do Item 2.</p>
-  </div>
+    <h2>Segurança</h2>
+    <p>FortiGate e SonicWall são soluções de segurança líderes no mercado, fornecendo proteção avançada e confiável para redes e sistemas, garantindo a defesa contra ameaças cibernéticas e mantendo a integridade dos dados.</p>
+    <div class="image-container">
+      <img src="img/Fortigate_Icon.png" alt="FortiGate" style="width: 100px; height: auto;">
+      <img src="img/SonicWall.Icon.png" alt="SonicWall" style="width: 100px; height: auto;">
+    </div>
+   </div>
 
   <div id="content3" class="hidden">
-    <h2>Conteúdo do Item 1</h2>
-    <p>Este é o conteúdo do Item 1.</p>
-  </div>
+    <h2>Infraestrutura</h2>
+    <p>AWS e Azure são plataformas de nuvem líderes que oferecem uma ampla gama de serviços e recursos para hospedar e gerenciar aplicativos e dados de forma escalável e segura. Além disso, servidores on-premises fornecem controle total sobre a infraestrutura, permitindo que as organizações mantenham seus dados e aplicativos localmente, garantindo a conformidade e a segurança dos dados sensíveis.</p>
+    <div class="image-container">
+      <img src="img/Azure_Icon.png" alt="Azure" style="width: 100px; height: auto;">
+      <img src="img/AWS_Icon.png" alt="AWS" style="width: 100px; height: auto;">
+      <img src="img/Onprim_Icon.png" alt="Onprim" style="width: 100px; height: auto;">
+    </div>
+   </div>
 
   <div id="content4" class="hidden">
-    <h2>Conteúdo do Item 2</h2>
-    <p>Este é o conteúdo do Item 2.</p>
-  </div>
+    <h2>Automação</h2>
+    <p>Docker é uma plataforma de virtualização de contêineres que simplifica o processo de empacotamento e implantação de aplicativos, permitindo a criação de ambientes isolados e consistentes em diferentes sistemas operacionais. Git é um sistema de controle de versão distribuído amplamente utilizado para rastrear e gerenciar alterações no código-fonte, facilitando o trabalho colaborativo e o controle de alterações em projetos de desenvolvimento. Jenkins é uma ferramenta de automação de integração contínua que permite a construção, teste e implantação automatizados de aplicativos, agilizando o processo de desenvolvimento e garantindo a qualidade do software entregue.</p>
+    <div class="image-container">
+      <img src="img/Jenkins_Icon.png" alt="Jenkins" style="width: 100px; height: auto;">
+      <img src="img/Docker_Icon.png" alt="Docker" style="width: 100px; height: auto;">
+      <img src="img/Git_Icon.png" alt="Git" style="width: 100px; height: auto;">
+    </div>
+   </div>
 
   <div id="content5" class="hidden">
-    <h2>Conteúdo do Item 2</h2>
-    <p>Este é o conteúdo do Item 2.</p>
-  </div>
-
-
+    <h2>Fluxo</h2>
+    <p>O fluxo de deploy deste site.</p>
+    <div id="pc-icon">
+        <img src="pc-icon.png" alt="PC Icon" style="width: 100px; height: auto;">
+      </div>    
+      <div id="arrow1"></div>
+      <div id="github-icon">
+        <img src="img/Git_Icon.png" alt= "GitHub Icon" style="width: 100px; height: auto;">
+      </div>
+      <div id="arrow2"></div>
+      <div id="jenkins-icon">
+        <img src="img/Jenkins_Icon.png" alt="Jenkins Icon" style="width: 100px; height: auto;">
+      </div>
+      <div class="icon-container">
+        <i class="fas fa-desktop"></i>
+        <i class="fas fa-arrow-right"></i>
+        <i class="fab fa-github"></i>
+        <i class="fas fa-arrow-right"></i>
+        <i class="fab fa-jenkins"></i>
+      </div>   
 </body>
 </html>
