@@ -1,61 +1,42 @@
-$('.open-overlay').click(function() {
-    $('.open-overlay').css('pointer-events', 'none');
-    var overlay_navigation = $('.overlay-navigation'),
-      top_bar = $('.bar-top'),
-      middle_bar = $('.bar-middle'),
-      bottom_bar = $('.bar-bottom');
+var selectedButton = null;
+var selectedDiv = null;
 
-    overlay_navigation.toggleClass('overlay-active');
-    if (overlay_navigation.hasClass('overlay-active')) {
+function toggleDiv(id, button) {
+  var div = document.getElementById(id);
 
-      top_bar.removeClass('animate-out-top-bar').addClass('animate-top-bar');
-      middle_bar.removeClass('animate-out-middle-bar').addClass('animate-middle-bar');
-      bottom_bar.removeClass('animate-out-bottom-bar').addClass('animate-bottom-bar');
-      overlay_navigation.removeClass('overlay-slide-up').addClass('overlay-slide-down')
-      overlay_navigation.velocity('transition.slideLeftIn', {
-        duration: 300,
-        delay: 0,
-        begin: function() {
-          $('nav ul li').velocity('transition.perspectiveLeftIn', {
-            stagger: 150,
-            delay: 0,
-            complete: function() {
-              $('nav ul li a').velocity({
-                opacity: [1, 0],
-              }, {
-                delay: 10,
-                duration: 140
-              });
-              $('.open-overlay').css('pointer-events', 'auto');
-            }
-          })
-        }
-      })
-
-    } else {
-      $('.open-overlay').css('pointer-events', 'none');
-      top_bar.removeClass('animate-top-bar').addClass('animate-out-top-bar');
-      middle_bar.removeClass('animate-middle-bar').addClass('animate-out-middle-bar');
-      bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
-      overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
-      $('nav ul li').velocity('transition.perspectiveRightOut', {
-        stagger: 150,
-        delay: 0,
-        complete: function() {
-          overlay_navigation.velocity('transition.fadeOut', {
-            delay: 0,
-            duration: 300,
-            complete: function() {
-              $('nav ul li a').velocity({
-                opacity: [0, 1],
-              }, {
-                delay: 0,
-                duration: 50
-              });
-              $('.open-overlay').css('pointer-events', 'auto');
-            }
-          });
-        }
-      })
+  if (selectedDiv !== div) {
+    // Clicou em um novo botão
+    if (selectedButton) {
+      // Remove a classe de seleção do botão anterior
+      selectedButton.classList.remove("selected");
+      // Oculta a div do botão anterior
+      selectedDiv.classList.add("hidden");
+      // Remove a classe visible do botão anterior, se existir
+      selectedDiv.classList.remove("visible");
     }
-  })
+
+    // Adiciona a classe hidden a todas as outras divs
+    var allDivs = document.querySelectorAll("#content1, #content2, #content3, #content4, #content5");
+    allDivs.forEach(function(div) {
+      div.classList.add("hidden");
+    });
+
+    // Abre a div do novo botão e adiciona a classe de seleção e visible
+    div.classList.remove("hidden");
+    div.classList.add("visible");
+    button.classList.add("selected");
+
+    // Atualiza as variáveis de controle
+    selectedButton = button;
+    selectedDiv = div;
+    document.getElementById("menu-h").style.transform = "translateX(-50px)";
+  } else {
+    // Clicou novamente no mesmo botão, fecha a div e remove a classe de seleção e visible
+    div.classList.add("hidden");
+    div.classList.remove("visible");
+    button.classList.remove("selected");
+    selectedButton = null;
+    selectedDiv = null;
+    document.getElementById("menu-h").style.transform = "translateX(0)";
+  }
+}

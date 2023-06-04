@@ -8,25 +8,49 @@
   <script src="js/script.js"></script>
 </head>
 <body>
-  <div class="overlay-navigation">
-    <nav role="navigation">
-      <ul>
-        <li><a href="#" data-content="The beginning">Home</a></li>
-        <li><a href="#" data-content="Curious?">About</a></li>
-        <li><a href="#" data-content="I got game">Skills</a></li>
-        <li><a href="#" data-content="Only the finest">Works</a></li>
-        <li><a href="#" data-content="Don't hesitate">Contact</a></li>
-      </ul>
-    </nav>
+
+  <nav id="menu-h">
+    <ul>
+      <li onclick="toggleDiv('content1', this)"><a href="#">Monitoramento</a></li>
+      <li onclick="toggleDiv('content2', this)"><a href="#">Segurança</a></li>
+      <li onclick="toggleDiv('content3', this)"><a href="#">Infraestrutura</a></li>
+      <li onclick="toggleDiv('content4', this)"><a href="#">Automação</a></li>
+      <li onclick="toggleDiv('content5', this)"><a href="#">Outros</a></li>
+    </ul>
+  </nav>
+
+  <div id="content1" class="hidden">
+    <h2>Observabilidade</h2>
+    <p>As ferramentas de observabilidade auxiliam na verificação da saúde de redes, aplicações, sites e outros sistemas, fornecendo insights valiosos sobre seu desempenho e funcionamento. Através delas, é possível coletar e analisar dados, possibilitando identificar problemas e otimizar o ambiente de forma eficiente.</p>
+    <div class="image-container">
+      <img src="img/Prometheus_icon.jpg" alt="Prometheus" style="width: 100px; height: auto;">
+      <img src="img/Zabbix_Icon.png" alt="Zabbix" style="width: 100px; height: auto;">
+      <img src="img/Grafana_Icon.png" alt="Grafana" style="width: 100px; height: auto;">
+    </div>
+    <br>
+    <iframe src="http://172.25.152.248:3000/d-solo/c02fe44c-bf2e-4806-997f-7303cb6e42b2/prometheus-site?orgId=1&from=1685767019941&to=1685853419942&refresh=30s&panelId=3" width="450" height="200" frameborder="0"></iframe>
   </div>
   
-  <section class="home">
-    <a href="https://codepen.io/fluxus/pen/gPWxXJ" target="_blank">Click for CSS version</a>
-    <div class="open-overlay">
-      <span class="bar-top"></span>
-      <span class="bar-middle"></span>
-      <span class="bar-bottom"></span>
-    </div>
-  </section>
+  <div id="content2" class="hidden">
+    <h2>Conteúdo do Item 2</h2>
+    <p>Este é o conteúdo do Item 2.</p>
+  </div>
+
+  <div id="content3" class="hidden">
+    <h2>Conteúdo do Item 1</h2>
+    <p>Este é o conteúdo do Item 1.</p>
+  </div>
+
+  <div id="content4" class="hidden">
+    <h2>Conteúdo do Item 2</h2>
+    <p>Este é o conteúdo do Item 2.</p>
+  </div>
+
+  <div id="content5" class="hidden">
+    <h2>Conteúdo do Item 2</h2>
+    <p>Este é o conteúdo do Item 2.</p>
+  </div>
+
+
 </body>
 </html>
