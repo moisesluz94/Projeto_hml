@@ -91,6 +91,16 @@ body {
   }
   
   /* Estilo do conteúdo */
+  .image-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image-container img {
+    margin-bottom: 5px;
+  }
+
   #content1,
   #content2,
   #content3,
