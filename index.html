@@ -16,8 +16,8 @@
       <li onclick="toggleDiv('content1', this)"><a href="#">Observabilidade</a></li>
       <li onclick="toggleDiv('content2', this)"><a href="#">Segurança</a></li>
       <li onclick="toggleDiv('content3', this)"><a href="#">Infraestrutura</a></li>
-      <li onclick="toggleDiv('content4', this)"><a href="#">Automação</a></li>
-      <li onclick="toggleDiv('content5', this)"><a href="#">Outros</a></li>
+      <li onclick="toggleDiv('content4', this)"><a href="#">DevOps</a></li>
+      <li onclick="toggleDiv('content5', this)"><a href="#">Fluxo</a></li>
     </ul>
   </nav>
 
@@ -25,7 +25,7 @@
     <h2>Observabilidade</h2>
     <p>As ferramentas de observabilidade auxiliam na verificação da saúde de redes, aplicações, sites e outros sistemas, fornecendo insights valiosos sobre seu desempenho e funcionamento. Através delas, é possível coletar e analisar dados, possibilitando identificar problemas e otimizar o ambiente de forma eficiente.</p>
     <div class="image-container">
-      <img src="img/Prometheus_icon.jpg" alt="Prometheus" style="width: 100px; height: auto;">
+      <img src="img/Prometheus_icon.png" alt="Prometheus" style="width: 100px; height: auto;">
       <img src="img/Zabbix_Icon.png" alt="Zabbix" style="width: 100px; height: auto;">
       <img src="img/Grafana_Icon.png" alt="Grafana" style="width: 100px; height: auto;">
     </div>
@@ -63,25 +63,41 @@
    </div>
 
   <div id="content5" class="hidden">
-    <h2>Fluxo</h2>
-    <p>O fluxo de deploy deste site.</p>
+    <div id="fluxo">
+      <h2>Fluxo</h2>
+      <p>A hospedagem deste site está em um container nginx. 
+        Após escrito, o site é publicado em um repositório do Github.
+        O Jenkinks possui uma rotina que sincroniza o repositório e atualiza o
+        container do site.</p>
+        <img src="img/Topologia.png" alt="PC Icon">
+    </div>
+
     <div id="pc-icon">
-        <img src="pc-icon.png" alt="PC Icon" style="width: 100px; height: auto;">
+        <img src="img/PC_Icon.png" alt="PC Icon" style="width: 100px; height: auto;">
       </div>    
-      <div id="arrow1"></div>
+
+      <div id="arrow1">
+        <img src="img/Seta_icon.png" alt="seta Icon" style="width: 80px; height: auto;">
+      </div>    
       <div id="github-icon">
-        <img src="img/Git_Icon.png" alt= "GitHub Icon" style="width: 100px; height: auto;">
+        <img src="img/Github_Icon.png" alt= "GitHub Icon" style="width: 100px; height: auto;">
       </div>
-      <div id="arrow2"></div>
+      
+      <div id="arrow2">
+        <img src="img/Seta_icon.png" alt="seta Icon" style="width: 80px; height: auto;">
+      </div>
       <div id="jenkins-icon">
         <img src="img/Jenkins_Icon.png" alt="Jenkins Icon" style="width: 100px; height: auto;">
       </div>
-      <div class="icon-container">
-        <i class="fas fa-desktop"></i>
-        <i class="fas fa-arrow-right"></i>
-        <i class="fab fa-github"></i>
-        <i class="fas fa-arrow-right"></i>
-        <i class="fab fa-jenkins"></i>
-      </div>   
+
+      <div id="arrow3"> 
+        <img src="img/Seta_icon.png" alt="seta Icon" style="width: 80px; height: auto;"> 
+      </div>
+      <div id="site">
+        <img src="img/Site_Icon.png" alt="site Icon" style="width: 100px; height: auto;">
+      </div>
+    </div>
+
+   
 </body>
 </html>
